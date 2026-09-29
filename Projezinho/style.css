@@ -621,6 +621,59 @@ button:hover {
 
 
 /* =========================================
+   BENEFÍCIOS
+========================================= */
+
+.beneficios {
+    padding: 60px 30px;
+    text-align: center;
+    background-color: var(--bg-main);
+}
+
+.beneficios h2 {
+    font-family: Georgia, serif;
+    font-size: 32px;
+    color: var(--brown-dark);
+    margin-bottom: 35px;
+}
+
+.beneficios-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.beneficio {
+    background-color: var(--white);
+
+    padding: 30px 20px;
+
+    border: 1px solid var(--border);
+    border-radius: 14px;
+}
+
+.beneficio-icone {
+    font-size: 48px;
+    margin-bottom: 15px;
+}
+
+.beneficio h3 {
+    font-family: Georgia, serif;
+    color: var(--brown-dark);
+    font-size: 20px;
+    margin-bottom: 8px;
+}
+
+.beneficio p {
+    color: var(--text-secondary);
+    font-size: 14px;
+}
+
+
+/* =========================================
    SOBRE
 ========================================= */
 
@@ -762,29 +815,9 @@ footer {
         padding: 45px 20px;
     }
 
-    /* Benefícios */
-
-    .beneficios {
-        padding: 60px 30px;
-        text-align: center;
-        background-color: var(--bg-light);
-    }
-
-    .beneficios h2 {
-        font-family: Georgia, serif;
-        font-size: 32px;
-        color: var(--brown-dark);
-        margin-bottom: 35px;
-    }
-
     .beneficios-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 20px;
-    } 
-    .beneficio-icone {
-    font-size: 48px;
-}
+        grid-template-columns: 1fr;
+    }
 
     /* FOOTER */
 
