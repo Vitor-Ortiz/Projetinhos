@@ -1,0 +1,798 @@
+/* =========================================
+   RESET
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* =========================================
+   CORES
+========================================= */
+
+:root {
+
+    --bg-main: #f7f1e8;
+    --bg-light: #fffaf4;
+    --bg-hero: #f4e4d2;
+
+    --brown-dark: #30251f;
+    --brown: #6b422c;
+    --brown-light: #9b694d;
+
+    --text-main: #34251d;
+    --text-secondary: #69564b;
+
+    --border: #e7d9cb;
+
+    --white: #ffffff;
+}
+
+
+/* =========================================
+   BODY
+========================================= */
+
+body {
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    background-color: var(--bg-main);
+
+    color: var(--text-main);
+
+    line-height: 1.6;
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+header {
+
+    background-color: var(--bg-light);
+
+    border-bottom: 1px solid var(--border);
+}
+
+
+/*
+    Container interno.
+
+    max-width impede o conteúdo
+    de ficar espalhado demais em telas grandes.
+*/
+
+.header-container {
+
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    padding: 18px 30px;
+
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 30px;
+}
+
+
+/* =========================================
+   LOGO
+========================================= */
+
+.logo {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+
+    font-family: Georgia, serif;
+
+    font-size: 22px;
+
+    font-weight: bold;
+
+    color: var(--brown);
+}
+
+
+.logo-img {
+
+    width: 32px;
+
+    height: 32px;
+}
+
+
+/* =========================================
+   MENU
+========================================= */
+
+nav {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 28px;
+}
+
+
+nav a {
+
+    text-decoration: none;
+
+    color: var(--text-secondary);
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    transition: color 0.2s ease;
+}
+
+
+nav a:hover {
+
+    color: var(--brown);
+}
+
+
+nav .inicio {
+
+    color: var(--brown);
+}
+
+
+/* =========================================
+   BOTÕES
+========================================= */
+
+button {
+
+    font-family: inherit;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+
+    padding: 11px 20px;
+
+
+    border: none;
+
+    border-radius: 30px;
+
+
+    cursor: pointer;
+
+
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+button:hover {
+
+    transform: translateY(-2px);
+}
+
+
+/* botão do header */
+
+.pedido-button {
+
+    background-color: var(--brown);
+
+    color: var(--white);
+}
+
+
+.pedido-button:hover {
+
+    background-color: var(--brown-dark);
+}
+
+
+/* =========================================
+   HERO
+========================================= */
+
+.hero {
+
+    background-color: var(--bg-hero);
+}
+
+
+/*
+    O HERO possui dois filhos:
+
+    .hero-content
+    .hero-image
+
+    Por isso usamos flex em linha.
+*/
+
+.hero-container {
+
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+
+    padding: 70px 40px;
+
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 50px;
+}
+
+
+/* =========================================
+   CONTEÚDO DO HERO
+========================================= */
+
+.hero-content {
+
+    width: 50%;
+
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 22px;
+}
+
+
+.sub-hero {
+
+    color: var(--brown-light);
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+}
+
+
+.hero h1 {
+
+    font-family: Georgia, serif;
+
+    font-size: 52px;
+
+    line-height: 1.05;
+
+    color: var(--brown-dark);
+
+    max-width: 520px;
+}
+
+
+.hero-descricao {
+
+    max-width: 470px;
+
+    color: var(--text-secondary);
+
+    font-size: 16px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================
+   BOTÕES DO HERO
+========================================= */
+
+.hero-buttons {
+
+    display: flex;
+
+    gap: 12px;
+
+    flex-wrap: wrap;
+}
+
+
+.cardapio-button {
+
+    background-color: var(--brown);
+
+    color: var(--white);
+}
+
+
+.cardapio-button:hover {
+
+    background-color: var(--brown-dark);
+}
+
+
+.sobre-button {
+
+    background-color: transparent;
+
+    color: var(--brown-dark);
+
+    border: 1px solid var(--brown);
+}
+
+
+.sobre-button:hover {
+
+    background-color: var(--brown);
+
+    color: var(--white);
+}
+
+
+/* =========================================
+   IMAGEM DO HERO
+========================================= */
+
+.hero-image {
+
+    width: 50%;
+
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+}
+
+
+/*
+    ESSA PARTE resolve o problema
+    da imagem enorme.
+*/
+
+.hero-image img {
+
+    width: 320px;
+
+    max-width: 100%;
+
+    height: auto;
+}
+
+
+/* =========================================
+   PRODUTOS
+========================================= */
+
+.produtos {
+
+    background-color: var(--bg-light);
+
+    padding: 60px 30px;
+}
+
+
+.produtos-container {
+
+    max-width: 1200px;
+
+    margin: 0 auto;
+}
+
+
+/* =========================================
+   TÍTULO DOS PRODUTOS
+========================================= */
+
+.produtos-header {
+
+    text-align: center;
+
+    margin-bottom: 35px;
+}
+
+
+.sub-produtos {
+
+    color: var(--brown-light);
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+    letter-spacing: 1px;
+
+    margin-bottom: 6px;
+}
+
+
+.produtos-header h2 {
+
+    font-family: Georgia, serif;
+
+    font-size: 32px;
+
+    color: var(--brown-dark);
+}
+
+
+/* =========================================
+   GRID
+========================================= */
+
+.menu-grid {
+
+    display: grid;
+
+
+    /*
+        Cria cards responsivos.
+
+        Cada card tem mínimo de 280px.
+    */
+
+    grid-template-columns:
+        repeat(auto-fit,
+            minmax(280px, 1fr));
+
+
+    gap: 22px;
+}
+
+
+/* =========================================
+   CARD
+========================================= */
+
+.produto {
+
+    background-color: var(--white);
+
+
+    border: 1px solid var(--border);
+
+    border-radius: 14px;
+
+
+    overflow: hidden;
+
+
+    display: flex;
+
+    flex-direction: column;
+
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.produto:hover {
+
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 8px 20px rgba(48, 37, 31, 0.12);
+}
+
+
+/* =========================================
+   IMAGEM DO CARD
+========================================= */
+
+.produto-imagem {
+
+    width: 100%;
+
+    height: 210px;
+
+
+    background-color: var(--bg-hero);
+
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+
+    overflow: hidden;
+}
+
+
+.produto-imagem img {
+
+    width: 100%;
+
+    height: 100%;
+
+
+    object-fit: contain;
+
+
+    padding: 20px;
+}
+
+
+/*
+    Para foto real, normalmente usaríamos:
+
+    object-fit: cover;
+
+    Mas seus arquivos são SVGs/ilustrações,
+    então contain funciona melhor.
+*/
+
+
+/* =========================================
+   CONTEÚDO DO CARD
+========================================= */
+
+.produto-info {
+
+    padding: 20px;
+
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 12px;
+
+
+    flex: 1;
+}
+
+
+/* =========================================
+   NOME + PREÇO
+========================================= */
+
+.produto-header {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 15px;
+}
+
+
+.produto-header h3 {
+
+    font-family: Georgia, serif;
+
+    font-size: 20px;
+
+    color: var(--brown-dark);
+}
+
+
+.preco {
+
+    color: var(--brown);
+
+    font-weight: bold;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================
+   DESCRIÇÃO
+========================================= */
+
+.descricao {
+
+    color: var(--text-secondary);
+
+    font-size: 14px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================
+   SOBRE
+========================================= */
+
+.sobre {
+
+    max-width: 800px;
+
+    margin: 0 auto;
+
+    padding: 70px 30px;
+
+    text-align: center;
+}
+
+
+.sobre h2 {
+
+    font-family: Georgia, serif;
+
+    font-size: 32px;
+
+    color: var(--brown-dark);
+
+    margin-bottom: 15px;
+}
+
+
+.sobre p {
+
+    color: var(--text-secondary);
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+footer {
+
+    background-color: var(--brown-dark);
+
+    color: var(--bg-light);
+
+
+    padding: 25px 40px;
+
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+
+    gap: 20px;
+
+
+    font-size: 14px;
+}
+
+
+/* =========================================
+   RESPONSIVIDADE
+========================================= */
+
+@media (max-width: 800px) {
+
+
+    /* HEADER */
+
+    .header-container {
+
+        flex-direction: column;
+
+        gap: 15px;
+    }
+
+
+    nav {
+
+        flex-wrap: wrap;
+
+        justify-content: center;
+
+        gap: 15px;
+    }
+
+
+    /* HERO */
+
+    .hero-container {
+
+        flex-direction: column;
+
+        padding: 50px 25px;
+    }
+
+
+    .hero-content {
+
+        width: 100%;
+
+        align-items: center;
+
+        text-align: center;
+    }
+
+
+    .hero h1 {
+
+        font-size: 40px;
+    }
+
+
+    .hero-image {
+
+        width: 100%;
+    }
+
+
+    .hero-image img {
+
+        width: 220px;
+    }
+
+
+    /* BOTÕES */
+
+    .hero-buttons {
+
+        justify-content: center;
+    }
+
+
+    /* PRODUTOS */
+
+    .produtos {
+
+        padding: 45px 20px;
+    }
+
+    /* Benefícios */
+
+    .beneficios {
+        padding: 60px 30px;
+        text-align: center;
+        background-color: var(--bg-light);
+    }
+
+    .beneficios h2 {
+        font-family: Georgia, serif;
+        font-size: 32px;
+        color: var(--brown-dark);
+        margin-bottom: 35px;
+    }
+
+    .beneficios-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+    } 
+    .beneficio-icone {
+    font-size: 48px;
+}
+
+    /* FOOTER */
+
+    footer {
+
+        flex-direction: column;
+
+        text-align: center;
+    }
+
+}

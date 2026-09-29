@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Casa do Café</title>
+    <!-- Importando fontes do Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- Variáveis de Cores --- */
+        :root {
+            --bg-page: #E6E2DC;
+            --bg-header-hero: #F8F3EA;
+            --bg-card-image: #F6E8D9;
+            --cor-primaria: #5A3624; /* Marrom escuro */
+            --cor-texto: #4A4A4A;
+            --cor-texto-claro: #6E6E6E;
+            --branco: #FFFFFF;
+        }
+
+        /* --- Reset Básico --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-page);
+            color: var(--cor-texto);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        /* --- Container Principal (Efeito de janela) --- */
+        .site-container {
+            max-width: 1000px;
+            width: 100%;
+            background-color: var(--branco);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        /* --- Cabeçalho --- */
+        header {
+            background-color: var(--bg-header-hero);
+            padding: 24px 48px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-family: 'Playfair Display', serif;
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--cor-primaria);
+        }
+
+        .logo-icon {
+            width: 32px;
+            height: 32px;
+            background-color: var(--cor-primaria);
+            color: var(--branco);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 14px;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 32px;
+            list-style: none;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--cor-primaria);
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .btn-header {
+            background-color: var(--cor-primaria);
+            color: var(--branco);
+            text-decoration: none;
+            padding: 10px 24px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+            transition: opacity 0.2s;
+        }
+
+        .btn-header:hover {
+            opacity: 0.9;
+        }
+
+        /* --- Seção Hero --- */
+        .hero {
+            background-color: var(--bg-header-hero);
+            padding: 60px 48px;
+            display: flex;
+            align-items: center;
+            gap: 60px;
+        }
+
+        .hero-content {
+            flex: 1;
+        }
+
+        .tagline {
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            color: #8C6A5A;
+            margin-bottom: 16px;
+            text-transform: uppercase;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 48px;
+            color: var(--cor-primaria);
+            line-height: 1.1;
+            margin-bottom: 24px;
+        }
+
+        .hero p {
+            font-size: 16px;
+            color: var(--cor-texto-claro);
+            line-height: 1.6;
+            margin-bottom: 32px;
+            max-width: 400px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 16px;
+        }
+
+        .btn-primary {
+            background-color: var(--cor-primaria);
+            color: var(--branco);
+            text-decoration: none;
+            padding: 14px 28px;
+            border-radius: 24px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--cor-primaria);
+            text-decoration: none;
+            padding: 14px 28px;
+            border-radius: 24px;
+            border: 1px solid #D1C4B8;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .hero-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        /* Círculo marrom atrás do café */
+        .hero-image::before {
+            content: '';
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background-color: #E6D0BA;
+            border-radius: 50%;
+            z-index: 1;
+            opacity: 0.5;
+        }
+
+        .coffee-illustration {
+            font-size: 150px;
+            position: relative;
+            z-index: 2;
+            /* Efeito simples para simular a xícara da imagem */
+            filter: drop-shadow(0 20px 20px rgba(0,0,0,0.1));
+        }
+
+        /* --- Seção Menu --- */
+        .menu-section {
+            padding: 60px 48px;
+            background-color: var(--branco);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-header h3 {
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            color: #8C6A5A;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+        }
+
+        .section-header h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 32px;
+            color: var(--cor-primaria);
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .card {
+            border: 1px solid #EEEEEE;
+            border-radius: 12px;
+            padding: 12px;
+            background-color: var(--branco);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+        }
+
+        .card-image {
+            background-color: var(--bg-card-image);
+            height: 140px;
+            border-radius: 8px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 60px;
+            margin-bottom: 20px;
+        }
+
+        .card-details {
+            padding: 0 8px 8px 8px;
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .card-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--cor-primaria);
+        }
+
+        .card-price {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--cor-primaria);
+        }
+
+        .card-desc {
+            font-size: 13px;
+            color: var(--cor-texto-claro);
+            line-height: 1.5;
+        }
+
+        /* --- Rodapé --- */
+        footer {
+            background-color: var(--cor-primaria);
+            color: var(--branco);
+            padding: 24px 48px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 12px;
+        }
+
+        /* Responsividade Básica */
+        @media (max-width: 900px) {
+            .hero {
+                flex-direction: column;
+                text-align: center;
+                padding: 40px 24px;
+            }
+            .hero p {
+                margin: 0 auto 32px auto;
+            }
+            .hero-buttons {
+                justify-content: center;
+            }
+            .hero-image::before {
+                width: 200px;
+                height: 200px;
+            }
+            .coffee-illustration {
+                font-size: 100px;
+            }
+            .menu-grid {
+                grid-template-columns: 1fr;
+            }
+            header {
+                flex-direction: column;
+                gap: 20px;
+                padding: 20px;
+            }
+            nav ul {
+                gap: 16px;
+            }
+            footer {
+                flex-direction: column;
+                gap: 10px;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="site-container">
+        <!-- Cabeçalho -->
+        <header>
+            <div class="logo">
+                <div class="logo-icon">/</div>
+                Casa do Café
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#">Início</a></li>
+                    <li><a href="#">Cardápio</a></li>
+                    <li><a href="#">Sobre</a></li>
+                    <li><a href="#">Contato</a></li>
+                </ul>
+            </nav>
+            <a href="#" class="btn-header">Fazer pedido</a>
+        </header>
+
+        <!-- Seção Principal (Hero) -->
+        <section class="hero">
+            <div class="hero-content">
+                <div class="tagline">Café Artesanal • Desde 2018</div>
+                <h1>Seu dia começa melhor com café.</h1>
+                <p>Grãos selecionados, preparo cuidadoso e aquele aroma que faz você querer ficar só mais alguns minutos.</p>
+                <div class="hero-buttons">
+                    <a href="#" class="btn-primary">Ver cardápio</a>
+                    <a href="#" class="btn-secondary">Conheça nossa história</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <!-- Usando emoji como placeholder para a xícara -->
+                <div class="coffee-illustration">☕</div>
+            </div>
+        </section>
+
+        <!-- Seção do Cardápio -->
+        <section class="menu-section">
+            <div class="section-header">
+                <h3>Os favoritos da casa</h3>
+                <h2>Escolha o seu café</h2>
+            </div>
+
+            <div class="menu-grid">
+                <!-- Card 1 -->
+                <div class="card">
+                    <div class="card-image">☕</div>
+                    <div class="card-details">
+                        <div class="card-header">
+                            <span class="card-title">Espresso</span>
+                            <span class="card-price">R$ 8,00</span>
+                        </div>
+                        <p class="card-desc">Intenso, encorpado e preparado na hora.</p>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="card">
+                    <div class="card-image">🥛</div>
+                    <div class="card-details">
+                        <div class="card-header">
+                            <span class="card-title">Latte Cremoso</span>
+                            <span class="card-price">R$ 14,00</span>
+                        </div>
+                        <p class="card-desc">Espresso, leite vaporizado e espuma delicada.</p>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="card">
+                    <div class="card-image">🍫</div>
+                    <div class="card-details">
+                        <div class="card-header">
+                            <span class="card-title">Mocha</span>
+                            <span class="card-price">R$ 16,00</span>
+                        </div>
+                        <p class="card-desc">Café, leite e chocolate em uma combinação suave.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Rodapé -->
+        <footer>
+            <div>© 2026 Casa do Café</div>
+            <div>Seg-Sáb • 08h às 20h</div>
+        </footer>
+    </div>
+
+</body>
+</html>
