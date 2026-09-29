@@ -151,7 +151,7 @@ nav a:hover {
 }
 
 
-nav .inicio {
+nav a[aria-current="page"] {
 
     color: var(--brown);
 }
@@ -708,6 +708,128 @@ button:hover {
 
 
 /* =========================================
+   CONTATO
+========================================= */
+
+.contato-page {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 64px 30px 80px;
+}
+
+.contato-intro {
+    max-width: 640px;
+    margin: 0 auto 42px;
+    text-align: center;
+}
+
+.contato-intro h1 {
+    margin: 8px 0 12px;
+    color: var(--brown-dark);
+    font-family: Georgia, serif;
+    font-size: 42px;
+    line-height: 1.15;
+}
+
+.contato-intro > p:last-child,
+.contato-info > p {
+    color: var(--text-secondary);
+}
+
+.contato-layout {
+    display: grid;
+    grid-template-columns: minmax(240px, 0.8fr) minmax(0, 1.2fr);
+    gap: 24px;
+    align-items: start;
+}
+
+.contato-info,
+.contato-formulario {
+    padding: 30px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background-color: var(--bg-light);
+}
+
+.contato-info h2,
+.contato-formulario h2 {
+    margin-bottom: 12px;
+    color: var(--brown-dark);
+    font-family: Georgia, serif;
+    font-size: 24px;
+}
+
+.contato-info > p {
+    margin-bottom: 28px;
+}
+
+.contato-horario {
+    padding-top: 20px;
+    border-top: 1px solid var(--border);
+}
+
+.contato-horario h3 {
+    margin-bottom: 8px;
+    color: var(--brown);
+    font-size: 15px;
+}
+
+.contato-horario p {
+    color: var(--text-secondary);
+    font-size: 14px;
+}
+
+.contato-formulario form {
+    display: grid;
+    gap: 18px;
+}
+
+.campo-contato {
+    display: grid;
+    gap: 7px;
+}
+
+.campo-contato label {
+    color: var(--text-main);
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.campo-contato input,
+.campo-contato textarea {
+    width: 100%;
+    padding: 11px 12px;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    background-color: var(--white);
+    color: var(--text-main);
+    font: inherit;
+}
+
+.campo-contato textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+.campo-contato input:focus,
+.campo-contato textarea:focus {
+    outline: 2px solid var(--brown-light);
+    outline-offset: 2px;
+}
+
+.contato-enviar {
+    justify-self: start;
+    border-radius: 6px;
+    background-color: var(--brown);
+    color: var(--white);
+}
+
+.contato-enviar:hover {
+    background-color: var(--brown-dark);
+}
+
+
+/* =========================================
    FOOTER
 ========================================= */
 
@@ -819,6 +941,23 @@ footer {
         grid-template-columns: 1fr;
     }
 
+    .contato-page {
+        padding: 48px 20px 60px;
+    }
+
+    .contato-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .contato-intro h1 {
+        font-size: 36px;
+    }
+
+    .contato-info,
+    .contato-formulario {
+        padding: 24px;
+    }
+
     /* FOOTER */
 
     footer {
@@ -828,4 +967,20 @@ footer {
         text-align: center;
     }
 
+}
+
+@media (max-width: 600px) {
+
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    .hero-buttons {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .hero-buttons button {
+        width: 100%;
+    }
 }
