@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Entre em contato com a Casa do Café.">
+	<title>Contato | Casa do Café</title>
+	<link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+	<header>
+		<div class="header-container">
+			<div class="logo">
+				<img src="../images/logo.svg" alt="" class="logo-img">
+				<span>Casa do Café</span>
+			</div>
+
+			<nav aria-label="Navegação principal">
+				<a href="../index.html">Início</a>
+				<a href="cardapio.html">Cardápio</a>
+				<a href="sobre.html">Sobre</a>
+				<a href="contato.html" aria-current="page">Contato</a>
+			</nav>
+
+			<button class="pedido-button" type="button" onclick="window.location.href='cardapio.html'">
+				Fazer pedido
+			</button>
+		</div>
+	</header>
+
+	<main class="contato-page">
+		<section class="contato-intro">
+			<p class="sub-hero">CASA DO CAFÉ</p>
+			<h1>Vamos conversar?</h1>
+			<p>Envie sua dúvida, sugestão ou comentário. Vamos adorar saber o que você achou.</p>
+		</section>
+
+		<div class="contato-layout">
+			<section class="contato-info" aria-labelledby="contato-info-titulo">
+				<h2 id="contato-info-titulo">Passe para um café</h2>
+				<p>Estamos prontos para receber você e preparar sua bebida favorita.</p>
+
+				<div class="contato-horario">
+					<h3>Horário de atendimento</h3>
+					<p>Segunda a sábado</p>
+					<p>08h às 20h</p>
+				</div>
+			</section>
+
+			<section class="contato-formulario" aria-labelledby="formulario-titulo">
+				<h2 id="formulario-titulo">Fale com a gente</h2>
+				<form action="#" method="post">
+					<div class="campo-contato">
+						<label for="nome">Nome</label>
+						<input type="text" id="nome" name="nome" autocomplete="name" required>
+					</div>
+
+					<div class="campo-contato">
+						<label for="email">E-mail</label>
+						<input type="email" id="email" name="email" autocomplete="email" required>
+					</div>
+
+					<div class="campo-contato">
+						<label for="assunto">Assunto</label>
+						<input type="text" id="assunto" name="assunto" required>
+					</div>
+
+					<div class="campo-contato">
+						<label for="mensagem">Mensagem</label>
+						<textarea id="mensagem" name="mensagem" rows="6" required></textarea>
+					</div>
+
+					<button class="contato-enviar" type="submit">Enviar mensagem</button>
+				</form>
+			</section>
+		</div>
+	</main>
+
+	<footer>
+		<p>&copy; 2026 Casa do Café</p>
+		<p>Segunda a sábado · 08h às 20h</p>
+	</footer>
+</body>
+
+</html>
