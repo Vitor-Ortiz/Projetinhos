@@ -24,33 +24,39 @@
 				<a href="contato.html" aria-current="page">Contato</a>
 			</nav>
 
-			<button class="pedido-button" type="button" onclick="window.location.href='cardapio.html'">
+			<a class="pedido-button button-link" href="cardapio.html">
 				Fazer pedido
-			</button>
+			</a>
 		</div>
 	</header>
 
 	<main class="contato-page">
-		<section class="contato-intro">
-			<p class="sub-hero">CASA DO CAFÉ</p>
-			<h1>Vamos conversar?</h1>
-			<p>Envie sua dúvida, sugestão ou comentário. Vamos adorar saber o que você achou.</p>
+		<section class="contato-intro" aria-labelledby="contato-titulo">
+			<p class="sub-hero">UM OI JÁ É UM BOM COMEÇO</p>
+			<h1 id="contato-titulo">Vamos conversar?</h1>
+			<p>Dúvida, sugestão ou vontade de tomar um café? A gente adora quando você aparece.</p>
 		</section>
 
 		<div class="contato-layout">
 			<section class="contato-info" aria-labelledby="contato-info-titulo">
-				<h2 id="contato-info-titulo">Passe para um café</h2>
-				<p>Estamos prontos para receber você e preparar sua bebida favorita.</p>
+				<p class="contato-selo">CASA DO CAFÉ</p>
+				<h2 id="contato-info-titulo">Sua pausa favorita fica melhor acompanhada.</h2>
+				<p>Estamos por aqui para preparar seu café e deixar o dia um pouco mais gostoso.</p>
 
 				<div class="contato-horario">
-					<h3>Horário de atendimento</h3>
-					<p>Segunda a sábado</p>
-					<p>08h às 20h</p>
+					<div>
+						<h3>Quando visitar</h3>
+						<p>Segunda a sábado</p>
+					</div>
+					<strong>08h–20h</strong>
 				</div>
+				<a class="contato-cardapio" href="cardapio.html">Ver o cardápio <span aria-hidden="true">→</span></a>
 			</section>
 
 			<section class="contato-formulario" aria-labelledby="formulario-titulo">
+				<p class="eyebrow">DEIXE SUA MENSAGEM</p>
 				<h2 id="formulario-titulo">Fale com a gente</h2>
+				<p class="formulario-aviso" id="formulario-aviso">Este formulário ainda não está conectado ao recebimento de mensagens.</p>
 				<form action="#" method="post">
 					<div class="campo-contato">
 						<label for="nome">Nome</label>
@@ -72,7 +78,7 @@
 						<textarea id="mensagem" name="mensagem" rows="6" required></textarea>
 					</div>
 
-					<button class="contato-enviar" type="submit">Enviar mensagem</button>
+					<button class="contato-enviar" type="submit" aria-describedby="formulario-aviso" disabled>Enviar mensagem <span aria-hidden="true">→</span></button>
 				</form>
 			</section>
 		</div>
@@ -80,6 +86,11 @@
 
 	<footer>
 		<p>&copy; 2026 Casa do Café</p>
+		<nav aria-label="Links do rodapé">
+			<a href="../index.html">Início</a>
+			<a href="cardapio.html">Cardápio</a>
+			<a href="sobre.html">Sobre</a>
+		</nav>
 		<p>Segunda a sábado · 08h às 20h</p>
 	</footer>
 </body>
